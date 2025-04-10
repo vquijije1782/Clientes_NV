@@ -6,11 +6,96 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 133px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">identificación</td>
+                <td>
+                    <asp:TextBox ID="TextBox1" runat="server" MaxLength="13"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">nombre</td>
+                <td>
+                    <asp:TextBox ID="TextBox2" runat="server" MaxLength="100"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">apellido</td>
+                <td>
+                    <asp:TextBox ID="TextBox3" runat="server" MaxLength="100"></asp:TextBox>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">fecha nacimiento</td>
+                <td>
+                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">estado</td>
+                <td>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem Value="1">Activo</asp:ListItem>
+                        <asp:ListItem Value="0">Inactivo</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Nuevo" />
+                </td>
+                <td>
+                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Grabar" />
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
         <div>
         </div>
+
+        <table class="auto-style1">
+            <tr>
+                <td>
+                    <asp:GridView ID="GridView1" runat="server">
+                    </asp:GridView>
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
