@@ -91,7 +91,15 @@
         <table class="auto-style1">
             <tr>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="identificacion" HeaderText="identificacion" />
+                            <asp:BoundField DataField="nombre" HeaderText="nombre" />
+                            <asp:BoundField DataField="apellido" HeaderText="apellido" />
+                            <asp:BoundField DataField="fecha_nacimiento" DataFormatString="{0:d}" HeaderText="fecha_nacimiento" />
+                            <asp:BoundField DataField="estado" HeaderText="estado" />
+                            <asp:CommandField SelectText="Sel" ShowSelectButton="True" />
+                        </Columns>
                     </asp:GridView>
                 </td>
             </tr>
