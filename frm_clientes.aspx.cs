@@ -64,6 +64,14 @@ namespace Clientes_NV
                 da.SelectCommand.Parameters.Add("@fecha_nacimiento", System.Data.SqlDbType.Date).Value = Calendar1.SelectedDate.ToShortDateString();
                 da.SelectCommand.Parameters.Add("@estado", System.Data.SqlDbType.Bit).Value = System.Convert.ToInt32(DropDownList1.SelectedValue.ToString());
 
+                SqlParameter valorsalida = new SqlParameter("@pv_error", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                da.SelectCommand.Parameters.Add(valorsalida);
+
+                
                 da.Fill(result);
 
                 consultar_datos();
@@ -74,7 +82,7 @@ namespace Clientes_NV
             {
                 //System.Console.WriteLine(ex.ToString());           
 
-                ClientScript.RegisterStartupScript(this.GetType(),"alert","alert('"+ex.ToString()+"')",true);
+                ClientScript.RegisterStartupScript(this.GetType(),"alert","alert('"+ex.Message.ToString().Substring(0,30)+"')",true);
             }
         }
 
@@ -106,7 +114,8 @@ namespace Clientes_NV
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine(ex.ToString());
+                //System.Console.WriteLine(ex.ToString());
+                ClientScript.RegisterStartupScript(this.GetType(),"alert","alert('"+ex.ToString()+"');",true);
             }
         }
 
@@ -156,6 +165,34 @@ namespace Clientes_NV
             {
                 //System.Console.WriteLine(ex.ToString());
                 ClientScript.RegisterStartupScript(this.GetType(),"alert","alert('"+ ex.ToString() + "');",true);
+            }
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            try
+            {
+
+                int id = System.Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value);
+
+                DataSet result = new DataSet();
+                SqlConnection conn = new SqlConnection("Data Source=localhost;Initial Catalog=db_clientes;User ID=sa;Password=desa*P2022");
+                conn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter("STP_CLIENTES", conn);
+                da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                da.SelectCommand.Parameters.Add("@tipo", System.Data.SqlDbType.Int).Value = 4;
+                da.SelectCommand.Parameters.Add("@id_cliente", System.Data.SqlDbType.Int).Value = id;
+
+                da.Fill(result);
+
+                consultar_datos();
+            }
+            catch (Exception ex)
+            {
+
+                ClientScript.RegisterStartupScript(this.GetType(),"alert","alter('"+ex.ToString()+"');",true);
             }
         }
     }

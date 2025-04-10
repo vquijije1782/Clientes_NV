@@ -91,7 +91,7 @@
         <table class="auto-style1">
             <tr>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDeleting="GridView1_RowDeleting" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="id_cliente">
                         <Columns>
                             <asp:BoundField DataField="identificacion" HeaderText="identificacion" />
                             <asp:BoundField DataField="nombre" HeaderText="nombre" />
@@ -99,6 +99,7 @@
                             <asp:BoundField DataField="fecha_nacimiento" DataFormatString="{0:d}" HeaderText="fecha_nacimiento" />
                             <asp:BoundField DataField="estado" HeaderText="estado" />
                             <asp:CommandField SelectText="Sel" ShowSelectButton="True" />
+                            <asp:CommandField ShowDeleteButton="True" />
                         </Columns>
                     </asp:GridView>
                 </td>
