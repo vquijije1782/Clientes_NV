@@ -32,7 +32,7 @@ namespace Clientes_NV
             TextBox3.Text = string.Empty;
             Calendar1.SelectedDate = DateTime.Now;
             DropDownList1.SelectedValue = "1";
-            Button2.Text = "Grabar";
+            Button2.Text = "GrabarRama4";
         }
 
         protected void Button2_Click(object sender, EventArgs e)

@@ -60,6 +60,15 @@ namespace Clientes_NV
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
 
         /// <summary>
+        /// Control Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+
+        /// <summary>
         /// Control DropDownList1.
         /// </summary>
         /// <remarks>

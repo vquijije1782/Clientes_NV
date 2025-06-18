@@ -49,6 +49,7 @@
                 <td class="auto-style2">fecha nacimiento</td>
                 <td>
                     <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    <asp:Button ID="Button3" runat="server" Text="ButtonRama4" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
